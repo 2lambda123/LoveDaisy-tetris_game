@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import random
+import secrets
 
 class Shape(object):
     shapeNone = 0
@@ -76,7 +76,7 @@ class BoardData(object):
         self.currentY = -1
         self.currentDirection = 0
         self.currentShape = Shape()
-        self.nextShape = Shape(random.randint(1, 7))
+        self.nextShape = Shape(secrets.SystemRandom().randint(1, 7))
 
         self.shapeStat = [0] * 8
 
@@ -97,7 +97,7 @@ class BoardData(object):
             self.currentY = -minY
             self.currentDirection = 0
             self.currentShape = self.nextShape
-            self.nextShape = Shape(random.randint(1, 7))
+            self.nextShape = Shape(secrets.SystemRandom().randint(1, 7))
             result = True
         else:
             self.currentShape = Shape()
