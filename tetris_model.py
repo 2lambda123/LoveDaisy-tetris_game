@@ -160,7 +160,7 @@ class BoardData(object):
         newY = BoardData.height - 1
         lines = 0
         for y in range(BoardData.height - 1, -1, -1):
-            blockCount = sum([1 if self.backBoard[x + y * BoardData.width] > 0 else 0 for x in range(BoardData.width)])
+            blockCount = sum(1 if self.backBoard[x + y * BoardData.width] > 0 else 0 for x in range(BoardData.width))
             if blockCount < BoardData.width:
                 for x in range(BoardData.width):
                     newBackBoard[x + newY * BoardData.width] = self.backBoard[x + y * BoardData.width]
